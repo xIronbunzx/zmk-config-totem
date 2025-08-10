@@ -80,14 +80,31 @@
     global-quick-tap;
     flavor = "tap-preferred";
     tapping-term-ms = <170>;
-};
+	};
 
 &lt {
     tapping-term-ms = <240>;
     flavor = "balanced";
     quick-tap-ms = <150>;
-};
+	};
 
+// SHIFT HELPER - easier re-mapping of shifted characters //
+#define DEFINE_SHIFT_KEY(_behavior_name, _normal_key, _shifted_key)         \
+    _behavior_name: _behavior_name {                                        \
+      compatible = "zmk,behavior-mod-morph";                                \
+      #binding-cells = <0>;                                                 \
+      bindings = <_normal_key>, <_shifted_key>;                             \
+      mods = <(MOD_LSFT|MOD_RSFT)>;                                         \
+    };
+
+// TAPDANCE HELPER - one-line tap dance creation //
+#define DEFINE_DOUBLE_TAP_KEY(_behavior_name, _normal_key, _double_tap_key) \
+    _behavior_name: _behavior_name {                                        \
+      compatible = "zmk,behavior-tap-dance";                                \
+      #binding-cells = <0>;                                                 \
+      tapping-term-ms = <200>;                                              \
+      bindings = <_normal_key>, <_double_tap_key>;                          \
+    };
 
 // COMBO HELPER - one-line combo creationg //
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS)                               \
@@ -111,6 +128,16 @@
 
 / {
     behaviors {
+	
+	DEFINE_DOUBLE_TAP_KEY(td_par, &kp LPAR, &kp RPAR)
+    DEFINE_DOUBLE_TAP_KEY(td_brc, &kp LBRC, &kp RBRC)
+    DEFINE_DOUBLE_TAP_KEY(td_bkt, &kp LBKT, &kp RBKT)
+    DEFINE_DOUBLE_TAP_KEY(td_lt, &kp LT, &kp GT)
+    DEFINE_DOUBLE_TAP_KEY(td_slh, &kp FSLH, &kp BSLH)
+    DEFINE_SHIFT_KEY(comma_semi, &kp COMMA, &kp SEMI)
+    DEFINE_SHIFT_KEY(dot_colon, &kp DOT, &kp COLON)
+    DEFINE_SHIFT_KEY(qu_excl, &kp QMARK, &kp EXCL)
+    DEFINE_SHIFT_KEY(redo, &kp K_UNDO, &kp K_REDO)
 	
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
@@ -136,7 +163,7 @@
             require-prior-idle-ms = <150>;
             hold-trigger-key-positions = <15 16 17 18 19>;
             hold-trigger-on-release;
-			};
+		};
     };
 
 // ╭───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
