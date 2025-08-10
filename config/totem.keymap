@@ -26,12 +26,54 @@
 // │ D E F I N I T I O N S                                                                                                                             │
 // ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
+
+// DEFINE LAYERS
 #define Base        0
 #define Nav         1
 #define Sym         2
 #define Fun         3
 #define Game        4
 #define Gameplus    5
+
+// DEFINE MAC-SPECIFIC KEYS
+#define APL_LAUNCHPAD          C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
+#define APL_LP                 APL_LAUNCHPAD
+#define APL_MISSION_CONTROL    C_AC_DESKTOP_SHOW_ALL_WINDOWS
+#define APL_MC                 APL_MISSION_CONTROL
+#define APL_SPOTLIGHT          C_AC_SEARCH
+#define APL_SP                 APL_SPOTLIGHT
+#define APL_CUT                LG(X)
+#define APL_COPY               LG(C)
+#define APL_PASTE              LG(V)
+#define APL_UNDO               LG(Z)
+#define APL_REDO               LG(LS(Z))
+#define APL_APP_WINDOWS        LG(LC(DOWN))
+#define APL_APPWIN             APL_APP_WINDOWS
+#define APL_NEXT_WINDOW        LG(GRAVE)
+#define APL_WINN               APL_NEXT_WINDOW
+#define APL_PREVIOUS_WINDOW    LG(TILDE)
+#define APL_WINP               APL_PREVIOUS_WINDOW
+#define APL_NEXT_DESKTOP       LG(LC(RIGHT))
+#define APL_DKTN               APL_NEXT_DESKTOP
+#define APL_PREVIOUS_DESKTOP   LG(LC(LEFT))
+#define APL_DKTP               APL_PREVIOUS_DESKTOP
+#define APL_FIND_NEXT          LG(G)
+#define APL_FDNXT              APL_FIND_NEXT
+#define APL_FIND_PREVIOUS      LG(LS(G))
+#define APL_FDPRV              APL_FIND_PREVIOUS
+#define APL_NEXT_WORD          LA(RIGHT)
+#define APL_WRDN               APL_NEXT_WORD
+#define APL_PREVIOUS_WORD      LA(LEFT)
+#define APL_WRDP               APL_PREVIOUS_WORD
+#define APL_START_OF_LINE      LG(LEFT)
+#define APL_STTL               APL_START_OF_LINE
+#define APL_END_OF_LINE        LG(RIGHT)
+#define APL_ENDL               APL_END_OF_LINE
+
+
+// ╭───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+// │ M A C R O S                                                                                                                                       │
+// ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
 &mt {
     quick-tap-ms = <100>;
@@ -45,6 +87,46 @@
     flavor = "balanced";
     quick-tap-ms = <150>;
 };
+
+// SHIFT HELPER - easier re-mapping of shifted characters //
+#define DEFINE_SHIFT_KEY(_behavior_name, _normal_key, _shifted_key)         \
+    _behavior_name: _behavior_name {                                        \
+      compatible = "zmk,behavior-mod-morph";                                \
+      #binding-cells = <0>;                                                 \
+      bindings = <_normal_key>, <_shifted_key>;                             \
+      mods = <(MOD_LSFT|MOD_RSFT)>;                                         \
+    };
+
+// TAPDANCE HELPER - one-line tap dance creation //
+#define DEFINE_DOUBLE_TAP_KEY(_behavior_name, _normal_key, _double_tap_key) \
+    _behavior_name: _behavior_name {                                        \
+      compatible = "zmk,behavior-tap-dance";                                \
+      #binding-cells = <0>;                                                 \
+      tapping-term-ms = <200>;                                              \
+      bindings = <_normal_key>, <_double_tap_key>;                          \
+    };
+
+// COMBO HELPER - one-line combo creationg //
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS)                               \
+  combo_##NAME {                                                            \
+    timeout-ms = <50>;                                                      \
+    bindings = <BINDINGS>;                                                  \
+    key-positions = <KEYPOS>;                                               \
+    layers = <LAYERS>;                                                      \
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 / {
     behaviors {
