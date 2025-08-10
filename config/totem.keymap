@@ -88,23 +88,6 @@
     quick-tap-ms = <150>;
 };
 
-// SHIFT HELPER - easier re-mapping of shifted characters //
-#define DEFINE_SHIFT_KEY(_behavior_name, _normal_key, _shifted_key)         \
-    _behavior_name: _behavior_name {                                        \
-      compatible = "zmk,behavior-mod-morph";                                \
-      #binding-cells = <0>;                                                 \
-      bindings = <_normal_key>, <_shifted_key>;                             \
-      mods = <(MOD_LSFT|MOD_RSFT)>;                                         \
-    };
-
-// TAPDANCE HELPER - one-line tap dance creation //
-#define DEFINE_DOUBLE_TAP_KEY(_behavior_name, _normal_key, _double_tap_key) \
-    _behavior_name: _behavior_name {                                        \
-      compatible = "zmk,behavior-tap-dance";                                \
-      #binding-cells = <0>;                                                 \
-      tapping-term-ms = <200>;                                              \
-      bindings = <_normal_key>, <_double_tap_key>;                          \
-    };
 
 // COMBO HELPER - one-line combo creationg //
 #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS)                               \
@@ -129,16 +112,6 @@
 / {
     behaviors {
 	
-        DEFINE_DOUBLE_TAP_KEY(td_par, &kp LPAR, &kp RPAR)
-        DEFINE_DOUBLE_TAP_KEY(td_brc, &kp LBRC, &kp RBRC)
-        DEFINE_DOUBLE_TAP_KEY(td_bkt, &kp LBKT, &kp RBKT)
-        DEFINE_DOUBLE_TAP_KEY(td_lt, &kp LT, &kp GT)
-        DEFINE_DOUBLE_TAP_KEY(td_slh, &kp FSLH, &kp BSLH)
-        DEFINE_SHIFT_KEY(comma_semi, &kp COMMA, &kp SEMI)
-        DEFINE_SHIFT_KEY(dot_colon, &kp DOT, &kp COLON)
-        DEFINE_SHIFT_KEY(qu_excl, &kp QMARK, &kp EXCL)
-        DEFINE_SHIFT_KEY(redo, &kp K_UNDO, &kp K_REDO)
-		
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -165,7 +138,30 @@
             hold-trigger-on-release;
     };
 
-    combos { compatible = "zmk,combos"; };
+// ╭───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+// │ C O M B O S                                                                                                                                       │
+// ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+//                                      38 KEY MATRIX / LAYOUT MAPPING
+//    ╭────────────────────┬────────────────────╮        ╭──────────────────────┬─────────────────────╮
+//    │  0   1   2   3   4 │  5   6   7   8   9 │        │  LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 │
+// ╭──╯ 10  11  12  13  14 │ 15  16  17  18  19 ╰───╮ ╭──╯  LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 ╰───╮
+// │ 20 21  22  23  24  25 │ 26  27  28  29  30  31 │ │ LB5 LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 RB5 │
+// ╰──────────╮ 32  33  34 │ 35  36  37 ╭───────────╯ ╰──────────╮  LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+//            ╰────────────┴────────────╯                        ╰──────────────┴─────────────╯
+
+    combos {
+        compatible = "zmk,combos";
+
+        COMBO(caps, &kp CAPS, 13 16, 0 1 2 3)
+        COMBO(lbrc, &kp LBRC, 13 14, 8)
+        COMBO(lt, &kp LT, 24 25, 8)
+        COMBO(undo, &kp K_UNDO, 21 22, 0 1 2 3 4 5 6 7 8 9)
+        COMBO(copy, &kp K_COPY, 22 23, 0 1 2 3 4 5 6 7 8 9)
+        COMBO(paste, &kp K_PASTE, 23 24, 0 1 2 3 4 5 6 7 8 9)
+    };
+
+
+
 
     keymap {
         compatible = "zmk,keymap";
