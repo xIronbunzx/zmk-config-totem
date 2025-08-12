@@ -21,6 +21,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <input/processors.dtsi>
 
 // ╭───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 // │ D E F I N I T I O N S                                                                                                                             │
@@ -297,10 +298,15 @@
 		Mouse {
             display-name = "Mouse";
             bindings = <
-				    &trans  	   &trans  		&trans  	  &trans  		 &trans    		 &trans     &msc SCRL_UP	&trans     &msc SCRL_DOWN	&trans 
+//				╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+				    &trans  	   &trans  		&trans  	  &trans  		 &trans    		 &trans     &msc SCRL_UP	&trans     &msc SCRL_DOWN	&trans
+//				├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 					&kp LGUI      &kp LALT     &kp LCTRL  	 &kp SHIFT		&trans    	&msc SCRL_LEFT &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_RIGHT &msc SCRL_RIGHT
-	   &trans  		&trans         &trans  		&trans  	  &trans  		&trans    		 &trans  	  &trans     &mmv MOVE_DOWN   &trans   		&mkp MB4   	  &mkp MB5 
+//╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
+	   &trans  		&trans         &trans  		&trans  	  &trans  		&trans    		 &trans  	  &trans     &mmv MOVE_DOWN   &trans   		&mkp MB4   	  &mkp MB5
+//╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 												&trans  	  &trans  		&trans    		&mkp MB1  	  &mkp MB3  	&mkp MB2
+//                            				╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
             >;
         };
     };
