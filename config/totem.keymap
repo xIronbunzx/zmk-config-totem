@@ -34,6 +34,7 @@
 #define Fun         3
 #define Game        4
 #define Gameplus    5
+#define Mouse		6
 
 // DEFINE MAC-SPECIFIC KEYS
 #define APL_LAUNCHPAD          C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
@@ -174,16 +175,11 @@
 
         COMBO(caps, &kp CAPS, 13 16, 0 1 2 3)
 		COMBO(undo, &kp K_UNDO, 21 22, 0 1 2 3 4 5 6 7 8 9)
-        COMBO(undo, &kp K_UNDO, 21 22, 0 1 2 3 4 5 6 7 8 9)
         COMBO(copy, &kp K_COPY, 22 23, 0 1 2 3 4 5 6 7 8 9)
         COMBO(paste, &kp K_PASTE, 23 24, 0 1 2 3 4 5 6 7 8 9)
-				
-		COMBO(undo, xxx, xx xx, 0 1 2 3 4 5 6 7 8 9)
-		COMBO(undo, xxx, xx xx, 0 1 2 3 4 5 6 7 8 9)
-		COMBO(undo, xxx, xx xx, 0 1 2 3 4 5 6 7 8 9)
-		COMBO(undo, xxx, xx xx, 0 1 2 3 4 5 6 7 8 9)
-		COMBO(undo, xxx, xx xx, 0 1 2 3 4 5 6 7 8 9)
-		COMBO(undo, xxx, xx xx, 0 1 2 3 4 5 6 7 8 9)
+		COMBO(backpace, &kp BSPC, 7 8, 0 1 2 3 4 5 6 7 8 9)
+		COMBO(delete, &kp DEL, 8 9, 0 1 2 3 4 5 6 7 8 9)
+		COMBO(tab, &kp TAB, 0 1, 0 1 2 3 4 5 6 7 8 9)
 		
         COMBO(lt, &kp LT, 24 25, 8)
     };
@@ -204,7 +200,7 @@
 //╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
 	&lt 3 ESCAPE  	&kp Z          &kp X       	 &kp C         &kp V         &kp B        	 &kp N    	   &kp M       &kp COMMA      &kp DOT      &kp SLASH   &kp APOSTROPHE
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-											 &mt LCTRL DEL  &lt 1 TAB     &kp SPACE    		&kp RET  	&lt 2 BSPC     &kp MINUS
+											 &mt LCTRL DEL   &lt 2 TAB    &lt 6 SPACE    	&kp RET  	&lt 1 BSPC     &kp MINUS
 //                            				╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
             >;
         };
@@ -213,11 +209,11 @@
             display-name = "Nav";
             bindings = <
 //				╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-				   &kp TILDE       &trans    &kp UP_ARROW	  &trans        &kp LBRC       &kp RBRC  	&kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+				  &kp NUMBER_0  &kp NUMBER_7  &kp NUMBER_8	&kp NUMBER_9    &kp LBRC       &kp RBRC  	   &trans  		 &trans  	 &trans  		&trans
 //				├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-			     &kp LEFT_SHIFT  &kp LEFT      &kp DOWN      &kp RIGHT  	&kp LBKT       &kp RBKT  	&kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6   &kp MINUS
+			     &kp LEFT_SHIFT &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  	&kp LBKT       &kp RBKT  	  &kp LEFT  	 &kp UP  	 &kp RIGHT     &kp MINUS
 //╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-	&kp LEFT_ALT  &kp LEFT_WIN   &kp MINUS  	&trans        &kp PLUS     &kp LPAR    	   &kp RPAR  	&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3 &kp KP_MULTIPLY  &kp PLUS
+	&kp LEFT_ALT  &kp LEFT_WIN  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp LPAR       &kp RPAR  	  &trans  		&kp DOWN  	  &trans 	   &kp PLUS
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 												&trans        &trans     	&trans      	&trans    	  &trans        &kp DOT
 //                            				╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
@@ -232,22 +228,24 @@
 //				├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 					&trans    	  &trans  		&trans    	  &trans      	&trans           &trans       &trans        &trans         &trans   	&trans
 //╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-   &studio_unlock   &trans    	  &trans  		&trans    	  &trans      	&trans         &kp UNDER     &kp EQUAL      &trans         &trans      &kp SLASH  	 &kp HOME
+   &studio_unlock   &trans    	  &trans  		&trans    	  &trans      	&trans         &kp UNDER     &kp EQUAL      &trans         &trans      &kp BSLH  	 &kp HOME
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 												&trans    	  &trans        &trans           &trans       &trans         &trans
 //                            				╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
             >;
         };
 
+
+//GAME LAYER GATEWAY
         Fun {
             display-name = "Fun";
             bindings = <
 //				╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-				  &bootloader  	   &trans  		&trans  	  &trans  		 &to 4     		 &trans  	  &trans  		 &trans  	  &kp END  		&kp F1
+				  &bootloader  	   &trans  		&trans  	  &trans  		 &trans    		 &trans  	  &trans  		 &trans  	  &kp END  		&kp F1
 //				├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 					&trans         &trans  		&trans  	  &trans  		&trans    		 &trans  	  &trans  		 &trans  	   &trans   	&kp F10
 //╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-	   &trans  		&trans         &trans  		&trans  	  &trans  		&trans    		 &trans  	  &trans  		 &trans  	   &trans   	&kp F20  	  &kp F7
+	   &trans  		&trans         &trans  		&trans  	  &trans  		&trans    		 &trans  	  &trans  		 &trans  	   &trans   	&kp F20  	  &to 4 
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 												&trans  	  &trans  		&trans    		 &trans  	  &trans  		 &trans
 //                            				╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
@@ -262,9 +260,9 @@
 //				├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 					 &kp A         &kp S  		 &kp D         &kp F         &kp G     		 &kp H  	   &kp J  		 &kp K  	  &kp L  		 &sl 5
 //╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-	  &kp TAB  	 	 &kp Z    	   &kp X  		 &kp C         &kp V         &kp B     		 &kp N  	   &kp M  	   &kp COMMA   	  &kp DOT 		 &kp R  	  &kp R
+	 &kp ESCAPE  	 &kp Z    	   &kp X  		 &kp C         &kp V         &kp B     		 &kp N  	   &kp M  	   &kp COMMA   	  &kp DOT 	   &kp SLASH   &kp APOSTROPHE
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-											   &kp LCTRL  	   &sl 5	   &kp SPACE    	&kp RET  	  &sl 5  		&trans
+											   &kp LCTRL  	   &sl 5	    &trans     		&trans	   	   &sl 5  		&trans
 //                            				╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
             >;
         };
@@ -273,13 +271,28 @@
             display-name = "Game+";
             bindings = <
 //				╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-				 &kp NUMBER_1   &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4 &kp NUMBER_5    &kp RA(RC(Y)) &kp RA(RC(U))    &trans  	  &trans  	 &kp LC(RA(DEL))
+				 &kp NUMBER_1   &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4 &kp NUMBER_5    	&trans 		  &trans    	&trans  	  &trans  	 	&trans
 //				├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-					 &kp L    	   &kp O         &kp Y         &kp K         &kp G     		 &kp F5        &kp F7        &trans  	  &trans  		&kp F12
+				 &kp NUMBER_6   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9 &kp NUMBER_10	 	&trans        &trans        &trans  	  &trans  		&trans
 //╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-	  &trans  		 &to 0    	  &trans        &trans         &trans         &trans    		 &trans        &trans        &trans  	  &trans  		&kp F22      &kp LA(F4)
+	 &kp GRAVE  	&kp F1    	  &kp F2        &kp F3         &kp F4        &kp F5         &trans        &trans        &trans  	  &trans  		&trans   	 &to 0
 //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-												&trans         &trans         &trans     		 &trans        &trans        &trans
+												&trans         &trans        &trans     	&trans        &trans        &trans
+//                            				╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
+            >;
+        };
+		
+		        Mouse {
+            display-name = "Mouse";
+            bindings = <
+//				╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+				    &trans  	   &trans  		&trans  	  &trans  		 &trans    		 &trans     &msc SCRL_UP	&trans     &msc SCRL_DOWN	&trans 
+//				├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+					&kp LGUI      &kp LALT     &kp LCTRL  	 &kp SHIFT		&trans    	&msc SCRL_LEFT &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_RIGHT &msc SCRL_RIGHT 
+//╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
+	   &trans  		&trans         &trans  		&trans  	  &trans  		&trans    		 &trans  	  &trans     &mmv MOVE_DOWN   &trans   		&mkp MB4   	  &mkp MB5 
+//╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+												&trans  	  &trans  		&trans    		&mkp MB1  	  &mkp MB3  	&mkp MB2
 //                            				╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
             >;
         };
