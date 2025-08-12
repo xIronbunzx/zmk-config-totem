@@ -174,14 +174,12 @@
         compatible = "zmk,combos";
 
         COMBO(caps, &kp CAPS, 13 16, 0 1 2 3)
-		COMBO(undo, &kp K_UNDO, 21 22, 0 1 2 3 4 5 6 7 8 9)
-        COMBO(copy, &kp K_COPY, 22 23, 0 1 2 3 4 5 6 7 8 9)
-        COMBO(paste, &kp K_PASTE, 23 24, 0 1 2 3 4 5 6 7 8 9)
-		COMBO(backpace, &kp BSPC, 7 8, 0 1 2 3 4 5 6 7 8 9)
-		COMBO(delete, &kp DEL, 8 9, 0 1 2 3 4 5 6 7 8 9)
-		COMBO(tab, &kp TAB, 0 1, 0 1 2 3 4 5 6 7 8 9)
-		
-        COMBO(lt, &kp LT, 24 25, 8)
+		COMBO(undo, &kp K_UNDO, 21 22, 0 1 2 3 4 5 6)
+        COMBO(copy, &kp K_COPY, 22 23, 0 1 2 3 4 5 6)
+        COMBO(paste, &kp K_PASTE, 23 24, 0 1 2 3 4 5 6)
+		COMBO(backpace, &kp BSPC, 7 8, 0 1 2 3 4 5 6)
+		COMBO(delete, &kp DEL, 8 9, 0 1 2 3 4 5 6)
+		COMBO(tab, &kp TAB, 0 1, 0 1 2 3 4 5 6)
     };
 
 
