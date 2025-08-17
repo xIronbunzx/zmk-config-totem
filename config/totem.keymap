@@ -35,6 +35,13 @@
 #define DSK_NEXT  &hmr LALT LG(LC(RIGHT)) // Next     desktop.
 #define PIN_WIN   &kp LG(LC(LS(Q)))       // Pin window across desktops.
 #define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
+#define NAV_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
+#define NAV_RIGHT &mt_end 0    RIGHT // Tap: right | Long-tap: end   of line.
+#define NAV_UP    &mt LC(HOME) UP    // Tap: up    | Long-tap: start of doc.
+#define NAV_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end   of doc.
+#define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
+#define NAV_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
+
 
 // ╭───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 // │ M A C R O S                                                                                                                                       │
@@ -155,7 +162,7 @@
         compatible = "zmk,combos";
 
 		COMBO(undo, &kp K_UNDO, 20 21, 0 1 2 3 4 5 6)
-		COMBO(redo, &kp K_REDO, 20 10, 0 1 2 3 4 5 6)
+		COMBO(redo, &kp K_REDO, 20 22, 0 1 2 3 4 5 6)
 		
         COMBO(copy, &kp K_COPY, 22 23, 0 1 2 3 4 5 6)
 		COMBO(paste, &kp K_PASTE, 23 24, 0 1 2 3 4 5 6)
