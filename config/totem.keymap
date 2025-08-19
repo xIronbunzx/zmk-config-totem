@@ -36,10 +36,10 @@
 #define PIN_WIN   &kp LG(LC(LS(Q)))       // Pin window across desktops.
 #define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
 
-#define NAV_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
-#define NAV_RIGHT &mt_end 0    RIGHT // Tap: right | Long-tap: end   of line.
+#define NAV_LEFT  &mt home 0   LEFT  // Tap: left  | Long-tap: start of line.
+#define NAV_RIGHT &mt end 0    RIGHT // Tap: right | Long-tap: end of line.
 #define NAV_UP    &mt LC(HOME) UP    // Tap: up    | Long-tap: start of doc.
-#define NAV_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end   of doc.
+#define NAV_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end of doc.
 #define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
 #define NAV_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
 
@@ -47,6 +47,7 @@
 // ╭───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 // │ M A C R O S                                                                                                                                       │
 // ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
 
 &mt {
     quick-tap-ms = <100>;
