@@ -36,8 +36,8 @@
 #define PIN_WIN   &kp LG(LC(LS(Q)))       // Pin window across desktops.
 #define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
 
-#define NAV_LEFT  &mt home LEFT  // Tap: left  | Long-tap: start of line.
-#define NAV_RIGHT &mt end RIGHT // Tap: right | Long-tap: end of line.
+#define NAV_LEFT  &mt HOME LEFT  // Tap: left  | Long-tap: start of line.
+#define NAV_RIGHT &mt END RIGHT // Tap: right | Long-tap: end of line.
 #define NAV_UP    &mt LC(HOME) UP    // Tap: up    | Long-tap: start of doc.
 #define NAV_DOWN  &mt LC(END)  DOWN  // Tap: down  | Long-tap: end of doc.
 #define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
@@ -54,6 +54,8 @@
     global-quick-tap;
     flavor = "tap-preferred";
     tapping-term-ms = <170>;
+	hold-trigger-key-positions = <0>;
+	bindings = <&mo>, <&kp>;
 	};
 
 &lt {
