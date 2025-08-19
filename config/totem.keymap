@@ -21,12 +21,12 @@
 // DEFINE LAYERS
 #define Base        0
 #define Nav         1
-#define Sym         2
-#define Fun         3
-#define Game        4
-#define Gameplus    5
-#define Mouse		6
-#define Sys			7
+#define Fun         2
+#define Game        3
+#define Gameplus    4
+#define Mouse		5
+#define Sys			6
+
 
 #define XXX &none
 #define ___ &trans
@@ -35,6 +35,7 @@
 #define DSK_NEXT  &hmr LALT LG(LC(RIGHT)) // Next     desktop.
 #define PIN_WIN   &kp LG(LC(LS(Q)))       // Pin window across desktops.
 #define PIN_APP   &kp LG(LC(LS(A)))       // Pin application across desktops.
+
 #define NAV_LEFT  &mt_home 0   LEFT  // Tap: left  | Long-tap: start of line.
 #define NAV_RIGHT &mt_end 0    RIGHT // Tap: right | Long-tap: end   of line.
 #define NAV_UP    &mt LC(HOME) UP    // Tap: up    | Long-tap: start of doc.
@@ -161,15 +162,35 @@
     combos {
         compatible = "zmk,combos";
 
-		COMBO(undo, &kp K_UNDO, 20 21, 0 1 2 3 4 5 6)
-		COMBO(redo, &kp K_REDO, 20 22, 0 1 2 3 4 5 6)
-		
-        COMBO(copy, &kp K_COPY, 22 23, 0 1 2 3 4 5 6)
-		COMBO(paste, &kp K_PASTE, 23 24, 0 1 2 3 4 5 6)
-		COMBO(cut, &kp K_CUT, 22 24, 0 1 2 3 4 5 6)
+//Left Hand Symbols
+		COMBO(at, &kp AT, 1 11, 0 1 2 3)
+		COMBO(hash, &kp HASH, 2 12, 0 1 2 3)
+		COMBO(dllr, &kp DLLR, 3 13, 0 1 2 3)
+		COMBO(prcnt, &kp PRCNT, 4 14, 0 1 2 3)
 
+		COMBO(grave, &kp GRAVE, 11 22, 0 1 2 3)
+		COMBO(bslh, &kp BSLH, 12 23, 0 1 2 3)
+		COMBO(equal, &kp EQUAL, 13 24, 0 1 2 3)
+		COMBO(tilde, &kp TILDE, 14 25, 0 1 2 3)	
+
+//Right Hand Symbols		
+		COMBO(caret, &kp CARET, 5 15, 0 1 2 3)
+		COMBO(plus, &kp PLUS, 6 16, 0 1 2 3)
+		COMBO(star, &kp STAR, 7 17, 0 1 2 3)
+		COMBO(amps, &kp AMPS, 8 18, 0 1 2 3)
+
+		COMBO(under, &kp UNDER, 15 26, 0 1 2 3)
+		COMBO(minus, &kp MINUS, 16 27, 0 1 2 3)
+		COMBO(fslh,  &kp FSLH, 17 28, 0 1 2 3)
+		COMBO(pipe,  &kp PIPE, 18 29, 0 1 2 3)
+
+//functions
+        COMBO(copy, &kp LC(INS), 22 23, 0 1 2 3)
+		COMBO(paste, &kp LS(INS), 23 24, 0 1 2 3)
+		COMBO(cut, &kp LC(X), 22 24, 0 1 2 3)
 		COMBO(caps, &kp CAPS, 13 16, 0 1 2 3 4)
-		
+		COMBO(undo, &kp K_UNDO, 20 21, 0 1 2 3)
+		COMBO(redo, &kp K_REDO, 30 31, 0 1 2 3)
     };
 
 	conditional_layers {
@@ -177,7 +198,7 @@
 
         sys_layer {
             if-layers = <1 2>;
-            then-layer = <7>;
+            then-layer = <6>;
         };
 	};
 
@@ -195,7 +216,7 @@
 // ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
 	&kp ESCAPE  	&kp Z          &kp X       	 &kp C         &kp V         &kp B        	  &kp N    	    &kp M       &kp COMMA      &kp DOT      &kp SLASH   	&kp APOSTROPHE
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-												&kp LSHFT    &lt 1 TAB    &lt 6 SPACE    	 &lt 3 RET  	&lt 2 DEL    &kp BSPC 
+											   &lt 2 LSHFT    &lt 1 TAB    &lt 5 SPACE    	  &kp RET  		&kp DEL    	&kp BSPC 
 //                            				 ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
             >;
         };
@@ -204,31 +225,16 @@ Nav {
     display-name = "Nav";
     bindings = <
 //				 ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-					&kp COMMA    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp LBRC      	 &kp RBRC     	  ___     		___           ___			___
+					&kp COMMA    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp LBRC      	 &kp RBRC     	&kp PG_UP		___       	&kp PG_DN		___
 //				 ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-	&hml LGUI DOT  &hml LALT NUMBER_4  &hml LCTRL NUMBER_5   &hml LSHFT NUMBER_6  &kp LBKT      	 &kp RBKT     	&kp LEFT      &kp UP        &kp RIGHT    	___
+					&kp DOT  	 &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp LBKT			 &kp RBKT     	NAV_LEFT      NAV_UP        NAV_RIGHT    	___
 // ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-		 ___       &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LPAR     	 &kp RPAR      &kp HOME      &kp DOWN    	&kp END      	___           ___
+	&kp LS(TAB)   &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3	&kp LPAR     	 &kp RPAR      &kp HOME      &kp DOWN    	&kp END      	___           ___
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                   ___           ___           ___          &kp PG_UP	   &kp PG_DN		___
+                                                   ___           ___           ___           	___	   		NAV_DEL		 NAV_BSPC
 // 											 ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
     >;
 };
-
-        Sym {
-            display-name = "Sym";
-            bindings = <
-//				 ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-					&kp EXCL  	  &kp AT  		&kp HASH    &kp DOLLAR    &kp PERCENT      &kp CARET   &kp AMPERSAND &kp KP_ASTERISK  &kp SQT  		&kp DQT
-//				 ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-					  ___    	    ___	    	&kp UNDER	  &kp MINUS       &kp LT          &kp GT		&kp PLUS       &kp PIPE		&kp EQUAL   	___
-// ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-		 ___		  ___    	    ___ 	  	  ___			 ___		   ___				___        	  ___      	 	___           ___        &kp BSLH		  ___
-// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-												  ___    	     ___           ___             ___      	  ___           ___
-//                            				 ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
-            >;
-        };
 
 
 //GAME LAYER GATEWAY
@@ -236,11 +242,11 @@ Nav {
             display-name = "Fun";
             bindings = <
 //				 ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-					&kp F12  	   &kp F8   	 &kp F8   	  &kp F9  		  ___	 	 	  ___   		___  	  	&kp C_VOL_UP	  ___			___
+					&kp F12  	   &kp F8   	 &kp F8   	  &kp F9  		  ___	 	 	  ___   		___  	  	&kp C_VOL_UP	  ___		&kp LA(F4)
 //				 ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 					&kp F11        &kp F4   	 &kp F5       &kp F6   		  ___    		  ___  	  		DSK_PREV	&kp C_VOL_DN	DSK_NEXT		___
 // ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-	   ___  		&kp F10        &kp F1  		 &kp F2   	  &kp F3   		  ___    		  PIN_APP		PIN_WIN		&kp C_MUTE		  ___			___			 &to 4 
+	   ___  		&kp F10        &kp F1  		 &kp F2   	  &kp F3   		  ___    		  PIN_APP		PIN_WIN		&kp C_MUTE		  ___			___			 &to 3 
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
 												  ___ 	  		___  		  ___    		  ___  	  		___  		  ___
 //                            				 ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
@@ -257,7 +263,7 @@ Nav {
 // ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
 	 &kp ESCAPE  	 &kp Z    	   &kp X  		 &kp C         &kp V         &kp B     		 &kp N  	   &kp M  	   &kp COMMA   	  &kp DOT 	   &kp SLASH   	  &to 0
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-												  &sl 5  	   &kp TAB	      ___     		  ___	   	     ___  		  &sl 5
+												  &sl 4  	   &kp TAB	      ___     		  ___	   	     ___  		  &sl 4
 //                            				 ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
             >;
         };
