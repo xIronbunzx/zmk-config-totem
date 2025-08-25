@@ -1,3 +1,31 @@
+#define A 30
+#define B 31
+#define C 32
+#define D 33
+#define E 34
+#define F 35
+#define G 36
+#define H 37
+#define I 38
+#define J 39
+#define K 40
+#define L 41
+#define M 42
+#define N 43
+#define O 44
+#define P 45
+#define Q 46
+#define R 47
+#define S 48
+#define T 49
+#define U 50
+#define V 51
+#define W 52
+#define X 53
+#define Y 54
+#define Z 55
+
+
 #undef ZMK_LEADER_SEQUENCE
 #define ZMK_LEADER_SEQUENCE(name, leader_bindings, leader_sequence) \
     / { \
@@ -53,4 +81,3 @@ ZMK_LEADER_SEQUENCE(ble, &out OUT_BLE, B L E)
 #endif // CONFIG_WIRELESS
 ZMK_LEADER_SEQUENCE(reset, &sys_reset, R E S E T)
 ZMK_LEADER_SEQUENCE(boot, &bootloader, B O O T)
-
