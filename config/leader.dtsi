@@ -15,10 +15,10 @@
     };
 
 /* German umlauts */
-ZMK_LEADER_SEQUENCE(de_ae, &uc UC_DE_AE, A)                 // ä
-ZMK_LEADER_SEQUENCE(de_oe, &uc UC_DE_OE, O)                 // ö
-ZMK_LEADER_SEQUENCE(de_ue, &uc UC_DE_UE, U)                 // ü
-ZMK_LEADER_SEQUENCE(de_eszett, &uc UC_DE_SS, S)             // ß
+ZMK_LEADER_SEQUENCE(de_ae, &uc UC_DE_AE, Z A)                 // ä
+ZMK_LEADER_SEQUENCE(de_oe, &uc UC_DE_OE, Z O)                 // ö
+ZMK_LEADER_SEQUENCE(de_ue, &uc UC_DE_UE, Z U)                 // ü
+ZMK_LEADER_SEQUENCE(de_eszett, &uc UC_DE_SS, Z S)             // ß
 
 /* Greek letters */
 ZMK_LEADER_SEQUENCE(el_alpha, &uc UC_EL_ALPHA, E A)         // α

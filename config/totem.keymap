@@ -6,7 +6,10 @@
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
+
+/*
 #include "zmk-helpers/unicode-chars/german.dtsi"
+*/
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
