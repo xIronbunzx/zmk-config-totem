@@ -10,7 +10,6 @@
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
-#include "../layouts/canadian-multilingual-standard.dtsi"
 #include "../behaviors/hold-tap.dtsi"
 #include "../behaviors/macros.dtsi"
 #include "../behaviors/mod-morph.dtsi"
