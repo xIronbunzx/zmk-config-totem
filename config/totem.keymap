@@ -10,10 +10,10 @@
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
-#include "../behaviors/hold-tap.dtsi"
-#include "../behaviors/macros.dtsi"
-#include "../behaviors/mod-morph.dtsi"
-#include "../behaviors/mouse.dtsi"
+#include "behaviors/hold-tap.dtsi"
+#include "behaviors/macros.dtsi"
+#include "behaviors/mod-morph.dtsi"
+#include "behaviors/mouse.dtsi"
 
 
 ZMK_LAYER(Base,
