@@ -20,9 +20,9 @@ behaviors {
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp &kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
-            hold-trigger-on-release;
+            hold-trigger-on-release = <1>;
         }
 
         /* right-hand HRMs */
@@ -30,9 +30,9 @@ behaviors {
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp &kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
-            hold-trigger-on-release;
+            hold-trigger-on-release = <1>;
         }
 
         // tap: backspace | shift + tap: delete
@@ -52,16 +52,3 @@ behaviors {
         };
     };
 };
-
-
-/* tap: question mark | shift + tap: inverted question mark
-ZMK_MOD_MORPH(ques_iques,
-    bindings = <&kp QUEST>, <&kp INV_QUEST>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-
-// tap: exclamation mark | shift + tap: inverted exclamation mark
-ZMK_MOD_MORPH(excl_iexcl,
-    bindings = <&kp EXCL>, <&kp INV_EXCL>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)*/
