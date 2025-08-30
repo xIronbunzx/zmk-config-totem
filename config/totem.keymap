@@ -10,8 +10,7 @@
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
-#include "behaviors/hold-tap.dtsi"
-#include "behaviors/mod-morph.dtsi"
+#include "behaviors/mods.dtsi"
 #include "behaviors/mouse.dtsi"
 
 

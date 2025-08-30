@@ -19,24 +19,57 @@
 /* https://github.com/urob/zmk-config#timeless-homerow-mods */
 
 
-/* left-hand HRMs */
-ZMK_HOLD_TAP(&hml){
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    global-quick-tap;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
-    hold-trigger-on-release;
-}
+/ {
+behaviors {
+        /* left-hand HRMs */
+        hml: home_row_mod_left {
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        }
 
-/* right-hand HRMs */
-ZMK_HOLD_TAP(&hmr){
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    global-quick-tap;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-    hold-trigger-on-release;
-}
+        /* right-hand HRMs */
+        hmr: home_row_mod_right {
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        }
+
+        // tap: backspace | shift + tap: delete
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <MOD_LSFT MOD_RSFT>;
+        };
+
+        // tap: slash | shift + tap: backslash
+        slsh_bslsh: slash_backslash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH>, <&kp BSLH>;
+            mods = <MOD_LSFT MOD_RSFT>;
+        };
+    };
+};
+
+
+/* tap: question mark | shift + tap: inverted question mark
+ZMK_MOD_MORPH(ques_iques,
+    bindings = <&kp QUEST>, <&kp INV_QUEST>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// tap: exclamation mark | shift + tap: inverted exclamation mark
+ZMK_MOD_MORPH(excl_iexcl,
+    bindings = <&kp EXCL>, <&kp INV_EXCL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)*/
