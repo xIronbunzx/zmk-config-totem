@@ -10,9 +10,9 @@
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
 
-#include <behaviors/hold-tap.dtsi>
-#include <behaviors/mod-morph.dtsi>
-#include <behaviors/mouse.dtsi>
+#include <config/behaviors/hold-tap.dtsi>
+#include <config/behaviors/mod-morph.dtsi>
+#include <config/behaviors/mouse.dtsi>
 
 
 keymap {
