@@ -23,7 +23,7 @@
 ZMK_HOLD_TAP(&hml,
     flavor = "balanced";
     tapping-term-ms = <280>;
-    quick-tap120.120122-ms = <175>;
+    quick-tap-ms = <175>;
     global-quick-tap;
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
