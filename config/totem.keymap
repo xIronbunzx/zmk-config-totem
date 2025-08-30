@@ -5,17 +5,15 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
 
-#include "constants.h"
-#define HOST_OS LINUX // Needed for unicode international_chars
-
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
 #include "behaviors/mods.dtsi"
 #include "behaviors/mouse.dtsi"
 
-
 / {
-	keymap {
+	#include "constants.h"
+	
+keymap {
     	compatible = "zmk,keymap";
 
     Base {
@@ -128,6 +126,6 @@
 //                            				 ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
                   	>;
     	};
-	};
 
+};
 };
