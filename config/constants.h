@@ -29,6 +29,3 @@
 #define WINDOWS 0
 #define LINUX 1
 #define MAC_OS 2
-
-//Apps
-//#define TMUX LC(LA(J)) // Tmux -> Ctrl + Alt + J

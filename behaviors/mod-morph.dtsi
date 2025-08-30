@@ -1,0 +1,32 @@
+/ {
+    behaviors {
+        // tap: backspace | shift + tap: delete
+        bspc_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+
+        // tap: slash | shift + tap: backslash
+        slsh_bslsh: slash_backslash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_SLASH>, <&kp LS(SLSH)>;
+            mods = <(MOD_LSFT | MOD_RSFT)>;
+        };
+    };
+};
+
+
+/* tap: question mark | shift + tap: inverted question mark
+ZMK_MOD_MORPH(ques_iques,
+    bindings = <&kp QUEST>, <&kp INV_QUEST>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// tap: exclamation mark | shift + tap: inverted exclamation mark
+ZMK_MOD_MORPH(excl_iexcl,
+    bindings = <&kp EXCL>, <&kp INV_EXCL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)*/
