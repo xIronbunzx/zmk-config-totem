@@ -1,11 +1,11 @@
 / {
-    behaviors {
+behaviors {
         // tap: backspace | shift + tap: delete
         bspc_del: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LSFT | MOD_RSFT)>;
+            mods = <MOD_LSFT MOD_RSFT>;
         };
 
         // tap: slash | shift + tap: backslash
@@ -13,7 +13,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp KP_SLASH>, <&kp LS(SLSH)>;
-            mods = <(MOD_LSFT | MOD_RSFT)>;
+            mods = <MOD_LSFT MOD_RSFT>;
         };
     };
 };
