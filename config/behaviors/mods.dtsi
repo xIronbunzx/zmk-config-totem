@@ -23,7 +23,7 @@ behaviors {
             bindings = <&kp &kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release = <1>;
-        }
+        };
 
         /* right-hand HRMs */
         hmr: home_row_mod_right {
@@ -33,7 +33,7 @@ behaviors {
             bindings = <&kp &kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release = <1>;
-        }
+        };
 
         // tap: backspace | shift + tap: delete
         bspc_del: backspace_delete {
