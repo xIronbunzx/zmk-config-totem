@@ -14,8 +14,9 @@
 #include "behaviors/mouse.dtsi"
 
 
-keymap {
-    compatible = "zmk,keymap";
+/ {
+	keymap {
+    	compatible = "zmk,keymap";
 
     Base {
         display-name = "Base";
@@ -126,6 +127,7 @@ keymap {
 												   ___  	  	 ___ 		   ___   		    ___  	      ___  		    ___
 //                            				 ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
                   	>;
-    };
+    	};
+	};
 
 };
