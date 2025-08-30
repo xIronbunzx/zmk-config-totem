@@ -7,12 +7,12 @@
 
 #include "constants.h"
 #define HOST_OS LINUX // Needed for unicode international_chars
-
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
-#include "zmk-config-totem/behaviors/hold-tap.dtsi"
-#include "zmk-config-totem/behaviors/mod-morph.dtsi"
-#include "zmk-config-totem/behaviors/mouse.dtsi"
+
+#include <behaviors/hold-tap.dtsi>
+#include <behaviors/mod-morph.dtsi>
+#include <behaviors/mouse.dtsi>
 
 
 keymap {
