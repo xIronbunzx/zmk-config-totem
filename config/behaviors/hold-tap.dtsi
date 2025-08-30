@@ -20,7 +20,7 @@
 
 
 /* left-hand HRMs */
-ZMK_HOLD_TAP(hml,
+ZMK_HOLD_TAP(&hml,
     flavor = "balanced";
     tapping-term-ms = <280>;
     quick-tap120.120122-ms = <175>;
@@ -31,7 +31,7 @@ ZMK_HOLD_TAP(hml,
 )
 
 /* right-hand HRMs */
-ZMK_HOLD_TAP(hmr,
+ZMK_HOLD_TAP(&hmr,
     flavor = "balanced";
     tapping-term-ms = <280>;
     quick-tap-ms = <175>;
