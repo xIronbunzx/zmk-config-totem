@@ -12,7 +12,7 @@ behaviors {
         slsh_bslsh: slash_backslash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp KP_SLASH>, <&kp LS(SLSH)>;
+            bindings = <&kp FSLH>, <&kp BSLH>;
             mods = <MOD_LSFT MOD_RSFT>;
         };
     };
