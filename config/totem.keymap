@@ -20,9 +20,6 @@
 	#define ___ &trans
 	#define XXX &none
 
-/*──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
-/* Global defaults */
-/*──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────*/
 
 /* Home Row Mods */
 		#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4 LB5      // left-hand keys
@@ -30,10 +27,23 @@
 		#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                              // thumb keys
 
 
-/* Combos, leader key sequences, mouse emulation */
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
+  ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
+               tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
+               require-prior-idle-ms = <150>; hold-trigger-on-release;         \
+               hold-trigger-key-positions = <TRIGGER_POS>;)
 
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
+
+
+#define ZMK_COMBO(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)       \
+  MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
+  ZMK_COMBO(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
+
+
+#include "behaviors/combos.dtsi" // Must be sourced after HRM-combo hack.
 #include "behaviors/combos.dtsi"
-#include "behaviors/mouse.dtsi"
 
 
 &mt {
