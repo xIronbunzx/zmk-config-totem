@@ -38,8 +38,8 @@ ZMK_COMBO(paste, &kp LS(INS), LB1 LB2, Base Nav Fun Game Mouse, COMBO_TERM_FAST,
 ZMK_COMBO(bspc, &kp BSPC, RT1 RT2, Base Nav Fun Game Mouse, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(del, &kp DEL, RT2 RT3, Base Nav Fun Game Mouse, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
-//ZMK_COMBO(lpar, &lpar_lt, RM1 RM2, Base Nav Fun Game Mouse, COMBO_TERM_FAST, COMBO_IDLE_FAST, RS(LCTRL), KEYS_L)
-//ZMK_COMBO(rpar, &rpar_gt, RM2 RM3, Base Nav Fun Game Mouse, COMBO_TERM_FAST, COMBO_IDLE_FAST, RS(LALT), KEYS_L)
+//ZMK_COMBO(lpar, &kp lpar, RM1 RM2, Base Nav Fun Game Mouse, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+//ZMK_COMBO(rpar, &kp rpar, RM2 RM3, Base Nav Fun Game Mouse, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(lt, &kp LT, RM1 RM2, Base Nav Fun Game Mouse, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(gt, &kp GT, RM2 RM3, Base Nav Fun Game Mouse, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
