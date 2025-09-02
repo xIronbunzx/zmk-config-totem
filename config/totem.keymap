@@ -7,6 +7,7 @@
 
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
+#include "behaviors/combos.dtsi"
 
 // DEFINE LAYERS
 	#define Base        0
@@ -42,8 +43,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
 
-#include "behaviors/combos.dtsi" // Must be sourced after HRM-combo hack.
-#include "behaviors/combos.dtsi"
+//#include "behaviors/combos.dtsi" // Must be sourced after HRM-combo hack.
+
 
 
 &mt {
