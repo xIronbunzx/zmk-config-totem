@@ -10,10 +10,7 @@
 //		         ╰──────────╮ 32  33  34 │ 35  36  37 ╭───────────╯      ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
 //				        	╰────────────┴────────────╯                              ╰─────────────┴─────────────╯
 
-
-#include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
-// ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 
 #define COMBO_TERM_FAST 18
@@ -30,7 +27,6 @@
 //ZMK_COMBO(ldr, &leader, 12 13, Base Nav Fun Game Mouse, COMBO_TERM_FAST, COMBO_IDLE_FAST, LS(LCTRL), KEYS_R)
 //ZMK_COMBO(ldrsh, &leader_sft,  11 12 13, Base Nav Fun Game Mouse, COMBO_TERM_FAST, COMBO_IDLE_FAST, LS(LC(LALT)), KEYS_R)
 //ZMK_COMBO(mouse, &smart_mouse, LT2 LT1, Base Nav Fun Game Mouse, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-
 
 
 // Horizontal combos - left hand
