@@ -81,7 +81,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp BSPC>, <&kp DEL>;
-				mods = <MOD_LSFT|MOD_RSFT>;
+				mods = <(MOD_LSFT|MOD_RSFT)>;
 			};
 
 		// tap: slash | shift + tap: backslash
@@ -89,7 +89,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 				compatible = "zmk,behavior-mod-morph";
 				#binding-cells = <0>;
 				bindings = <&kp FSLH>, <&kp BSLH>;
-				mods = <MOD_LSFT|MOD_RSFT>;
+				mods = <(MOD_LSFT|MOD_RSFT)>;
 			};
 
 		};
@@ -109,7 +109,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 				// ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
 						&kp TAB  	  &kp Z         &kp X         &kp C         &kp V        &kp B        	   &kp N    	 &kp M      &comma_semi	   &dot_colon   &slsh_bslsh    &bspc_del
 				// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-																&lt 5 BSPC    &lt 2 DEL     &lt 1 SPACE    	 &lt 1 RET     &lt 5 DEL   &lt 2  
+																&lt 5 BSPC    &lt 2 DEL     &lt 1 SPACE    	 &lt 1 RET     &lt 5 DEL   &lt 2 ESC 
 				//                            				 ╰─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────╯
                 	>;
     			};
