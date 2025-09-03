@@ -45,10 +45,6 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
 
-//#include "behaviors/combos.dtsi" // Must be sourced after HRM-combo hack.
-
-
-
 &mt {
     quick-tap-ms = <100>;
     global-quick-tap;
@@ -109,7 +105,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 				//				 ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
 									  &kp Q         &kp W         &kp E         &kp R         &kp T        	   &kp Y    	 &kp U        &kp I         &kp O         &kp P
 				//				 ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-								   &hml LGUI A	 &hml LALT S   &hml LCTRL D  &hml LSHFT F  	  &kp G            &kp H	  &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L   &hmr RGUI SEMICOLON
+								   &hml LGUI A	 &hml LALT S   &hml LCTRL D  &hml LSHFT F  	  &kp G            &kp H	  &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L   &hmr RGUI SEMI
 				// ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
 						&kp TAB  	  &kp Z         &kp X         &kp C         &kp V        &kp B        	   &kp N    	 &kp M      &comma_semi	   &dot_colon   &slsh_bslsh    &bspc_del
 				// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
@@ -123,9 +119,9 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
         		display-name = "Nav";
         			bindings = <
 				//				 ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-									&kp COMMA    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9      ___              ___     	&kp PG_UP	   NAV_UP		&kp PG_DN		___
+									&kp COMMA    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9      ___              ___     	&kp PG_UP	  &kp UP		&kp PG_DN		___
 				//				 ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-									&kp DOT  	 &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6      ___              ___     	NAV_LEFT      &kp DOWN		NAV_RIGHT    	___
+									&kp DOT  	 &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6      ___              ___     	&kp LEFT      &kp DOWN		&kp RIGHT    	___
 				// ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
 						___        &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3      ___              ___         &kp HOME        ___			 &kp END      	___           ___
 				// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
