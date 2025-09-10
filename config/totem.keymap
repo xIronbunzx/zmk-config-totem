@@ -121,7 +121,7 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
     	smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
     	ignored-key-positions =
         	<3 2 34 33 6 7 8 15 16 17 18 19 27 28 29 35 36>;
-    	ignored-layers = <MOUSE NAV FN>;)
+    	ignored-layers = <5 1 2>;)
 
 /* Custom behaviors */
 // Alt+Tab swapper, requires tri-state module.
