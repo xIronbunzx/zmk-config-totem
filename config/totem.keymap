@@ -118,7 +118,7 @@ MASK_MODS(masked_end,  (MOD_LCTL), &kp END)
 
 // Smart-mouse, requires tri-state module.
 	ZMK_TRI_STATE(
-    	smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
+    	smart_mouse, bindings = <&tog 5>, <&none>, <&tog 5>;
     	ignored-key-positions =
         	<3 2 34 33 6 7 8 15 16 17 18 19 27 28 29 35 36>;
     	ignored-layers = <5 1 2>;)
