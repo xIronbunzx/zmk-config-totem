@@ -10,6 +10,7 @@
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
 #include "behaviors/combos.dtsi"
+#include "behaviors/leader.dtsi"
 
 // DEFINE LAYERS
 	#define Base        0
