@@ -2,7 +2,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h>
 #include <behaviors/num_word.dtsi>
 #include <dt-bindings/zmk/pointing.h>
 
@@ -319,7 +318,7 @@ ZMK_CONDITIONAL_LAYER(sys, 2 1, 6)
         		display-name = "Sys";
         			bindings = <
 				//				 ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮  ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-									   XXX  		 XXX  		   XXX  		 XXX      &studio_unlock    &studio_unlock    XXX 	  	  	XXX  	   	  XXX  	        XXX
+									   XXX  		 XXX  		   XXX  		 XXX      	   XXX    			XXX    		  XXX 	  	  	XXX  	   	  XXX  	        XXX
 				//				 ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 								   &bt BT_SEL 0	 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  	&bt BT_CLR    	 &bt BT_CLR  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
 				// ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
