@@ -2,7 +2,7 @@
 #define ZMK_LEADER_SEQUENCE(name, leader_bindings, leader_sequence) \
     / {
     behaviors {
-        leader: leader {
+        leader: leader_key {
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
             timeout-ms = <500>;
@@ -13,8 +13,8 @@
         };
 
 
-        };
     };
+};
 
 /* German umlauts */
 ZMK_LEADER_SEQUENCE(de_ae,      &uc UC_DE_AE,         A)  // ä
