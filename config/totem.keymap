@@ -10,7 +10,6 @@
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/totem.h"
 #include "behaviors/combos.dtsi"
-#include "behaviors/leader.dtsi"
 
 // DEFINE LAYERS
 	#define Base        0
@@ -165,9 +164,6 @@ SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
 // Tap: copy | double-tap: cut.
 	ZMK_TAP_DANCE(copy_cut, bindings = <&kp LC(INS)>, <&kp LC(X)>;
               tapping-term-ms = <200>;)
-
-// Sticky shift + leader.
-	ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 
 /* Keymap */
