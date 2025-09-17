@@ -23,6 +23,9 @@
 // Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous chording of mods. Custom hold-tap instances can be bootstrapped on the go using the
 // 8-argument version of ZMK_COMBO defined in base.keymap
 
+//Gaming Layer Toggle
+ZMK_COMBO(gmode, &to 3, 29 30 31, 0 1 2 3 4 5 7 8, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
 // Horizontal combos - left hand
 //ZMK_COMBO(esc, &kp ESC, 0 1, 0 1 2 3 4 5, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(capslock, &kp CAPSLOCK, 12 17, 0 1 2 3 4 5, COMBO_TERM_FAST, COMBO_IDLE_FAST)
