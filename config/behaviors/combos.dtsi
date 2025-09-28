@@ -63,7 +63,7 @@ ZMK_COMBO(fslh, &kp FSLH, 17 28, 0 1, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(pipe, &kp PIPE, 18 29, 0 1, COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 
-/Gaming Layer Toggle
+//Gaming Layer Toggle
 ZMK_COMBO(gmode, &to 4, 27 28 29 30, 0 1 2 3 4 5 7 8, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 // Gaming Combos
